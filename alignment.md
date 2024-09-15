@@ -20,13 +20,14 @@ module load singularity
 singularity pull docker://rkitchen/excerpt
 
 ```
-This will generate an `excerpt_latest.sh` file. That is the singularity container that houses the exceRpt pipeline.
+This will generate an `excerpt_latest.sh` file, a container that houses the exceRpt pipeline.
 
-`Note:` exerRpt uses external aligners such as HISAT2 or STARS to handle the alignment step. We will get there in a bit.
+`Note:` exerRpt uses external aligners such as HISAT2 or STARS to handle the alignment step.
+
 
 - Prepare the Genome and Data files for alignment
 
-1. Prepare your input and output working directory
+1. First prepare your input and output working directory
 
 ```
 
@@ -35,8 +36,7 @@ mkdir /home/OutputSample/
 
 ```
 
-2. Download the reference genome (hg38)
-I will be using HISAT2 aligner, so I will download the hg38 reference genome in FASTA format 
+2. I downloaded the reference genome (hg38) in FASTA format because I used the HISAT2 aligner 
 
 ```
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/hg38.fa.gz -P /home/InputSample/
@@ -50,7 +50,7 @@ gunzip /home/InputSample/hg38.fa.gz
 
 ```
 
-4. Download the dataset you want to align. I will download it in the InputSample directory
+4. Download the dataset you want to align. I will download it in the InputSample directory.
 I will be downloading the publicly available SRR026761.sra file and convert it to a fastq file simulaneously
 
 ```
